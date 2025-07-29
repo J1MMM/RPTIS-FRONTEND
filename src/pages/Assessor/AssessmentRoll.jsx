@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
-import { Collapse, Stack } from "@mui/material";
+import { Collapse, Stack, Typography } from "@mui/material";
 import {
   ALERT_SEV,
   ASSESSMENT_ROLL_COLUMN,
@@ -12,7 +12,7 @@ import {
   PAGE_SIZE_OPTION,
   SUBDIVIDE_INITIAL_DATA,
 } from "../../utils/constant";
-import { CreateNewFolderOutlined } from "@mui/icons-material";
+import { Add, CreateNewFolderOutlined, Shuffle } from "@mui/icons-material";
 import { useQueryClient } from "react-query";
 import AddTaxDecModal from "../../components/form/modal/AddTaxDecModal";
 import { v4 } from "uuid";
@@ -32,6 +32,66 @@ import { TaxdecPrintableFormModal } from "../../components/form/modal/reactToPri
 import { TableToolbar } from "../../components/form/table/TableToolbar";
 import { ConsolidateModal } from "../../components/form/modal/ConsolidateModal";
 import AssessorTaxdecForms from "../../components/printable/assessor-form/TaxdecFormsPopover";
+const rows = [
+  {
+    id: 1,
+    fname: "Juan",
+    mname: "S.",
+    lname: "Dela Cruz",
+    PID: "PID-001",
+    ArpNo: "ARP-2024-0001",
+    oldArp: "ARP-2020-0001",
+    Address: "123 Mabini St, San Pablo City",
+    Boundaries: {
+      land: true,
+      building: false,
+      machinery: true,
+      others: false,
+    },
+    classification: [
+      {
+        classification: "Residential",
+        assessedValue: "₱500,000",
+      },
+    ],
+    BLOCK: "Block 12",
+    Brgy: "Barangay 4",
+    LocationOfProperty: "Block 12 Barangay 4", // Optional if not used directly
+    AssessedValue: "₱500,000", // Optional if not used directly
+    TAXABILITY: "taxable",
+    dateOfEffectivity: "2025-01-01",
+  },
+  {
+    id: 2,
+    fname: "Maria",
+    mname: "L.",
+    lname: "Reyes",
+    PID: "PID-002",
+    ArpNo: "ARP-2024-0002",
+    oldArp: "ARP-2019-0002",
+    Address: "456 Bonifacio Ave, San Pablo City",
+    Boundaries: {
+      land: true,
+      building: true,
+      machinery: false,
+      others: false,
+    },
+    classification: [
+      {
+        classification: "Commercial",
+        assessedValue: "₱1,200,000",
+      },
+      {
+        classification: "Industrial",
+        assessedValue: "₱300,000",
+      },
+    ],
+    BLOCK: "Block 9",
+    Brgy: "Barangay 2",
+    TAXABILITY: "exempt",
+    dateOfEffectivity: "2024-06-15",
+  },
+];
 
 function AssessmentRoll() {
   const queryClient = useQueryClient();
@@ -401,15 +461,16 @@ function AssessmentRoll() {
           disabled={Boolean(selectedArpNos.length < 2)}
           variant="outlined"
           onClick={() => setConsolidateActive(true)}
+          startIcon={<Shuffle />}
         >
           consolidate
         </Button>
         <Button
           onClick={() => setTaxdecModalOpen(true)}
           variant="contained"
-          startIcon={<CreateNewFolderOutlined />}
+          startIcon={<Add />}
         >
-          Add Taxdec
+          Add FAAS
         </Button>
       </Stack>
     );
@@ -420,12 +481,13 @@ function AssessmentRoll() {
       <PageContainer>
         <DataGrid
           checkboxSelection
-          loading={isAssessorLoading}
-          rows={assessorData}
+          // loading={isAssessorLoading}
+          rows={rows}
           columns={ASSESSMENT_ROLL_COLUMN}
           initialState={DATA_GRID_INITIAL_STATE}
           pageSizeOptions={PAGE_SIZE_OPTION}
           disableRowSelectionOnClick
+          disableColumnResize
           onCellDoubleClick={handleCellDoubleClick}
           onRowSelectionModelChange={handleSelectionChange}
           sx={DATA_GRID_STYLE}

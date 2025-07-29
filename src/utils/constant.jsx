@@ -6,7 +6,7 @@ export const HEADER_HEIGHT = "80px";
 export const DRAWER_WIDTH_OPEN = 250;
 export const DRAWER_WIDTH_CLOSED = 60;
 // export const BASE_URL = "http://10.10.10.86:4000";
-export const BASE_URL = "http://localhost:4000";
+export const BASE_URL = "http://10.10.10.117:4000";
 export const SOCKET = io(BASE_URL);
 
 export const ALERT_SEV = {
@@ -486,15 +486,15 @@ export const CLASSIFICATION_DEFAULT = {
 export const ASSESSOR_TAB_LINKS = [
   {
     to: "",
-    label: "Assessment Roll",
+    label: "Active Records",
+  },
+  {
+    to: "cancels",
+    label: "Archived Records",
   },
   {
     to: "pending",
     label: "Pending",
-  },
-  {
-    to: "cancels",
-    label: "Canscels",
   },
 ];
 
@@ -776,26 +776,28 @@ export const SUBDIVIDE_INITIAL_DATA = {
 
 export const DATA_GRID_STYLE = {
   "& .MuiDataGrid-row": {
+    fontFamily: "Poppins",
     "&:last-child .MuiDataGrid-cell": {
       borderBottom: "none", // Remove bottom border from last row
     },
   },
   ".MuiDataGrid-columnHeaderTitleContainer": {
-    bgcolor: "primary.main",
+    bgcolor: "mono.main",
   },
 
   ".data-grid-header": {
-    bgcolor: "#1A237E",
-    color: "#FFF",
+    bgcolor: "mono.main",
+    color: "#000",
     ".MuiDataGrid-columnHeaderTitle": {
-      fontWeight: "bold",
+      fontWeight: "600",
+      fontFamily: "Poppins",
     },
     "&.MuiDataGrid-root": {
       border: "none",
-      color: "#FFF",
+      color: "#000",
     },
     ".MuiIconButton-sizeSmall": {
-      color: "#FFF",
+      color: "#000",
     },
   },
   border: "none",

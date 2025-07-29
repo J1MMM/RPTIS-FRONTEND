@@ -31,14 +31,37 @@ body {
 .tab-link {
   text-decoration: none;
   box-sizing: border-box;
-  color: #808080;
+  color: #000;
   padding: 15px 20px;
+  padding-top: 20px;
+
   &:hover {
-    color: #1a237e;
+    // color: #1a237e;
     background-color: #f2f5f7;
   }
   &.active {
     color: #1a237e;
     border-bottom: 2px solid #1a237e;
   }
+}
+
+input:-webkit-autofill,
+.MuiInputBase-root:has(> input:-webkit-autofill) {
+  background-color: #e8f0fe;
+}
+
+.MuiDataGrid-main {
+  background-color: #fff;
+  border: 1px solid #e7ebf1;
+  border-bottom: none;
+  // border-radius: 5px;
+  // border-bottom-right-radius: 0;
+  // border-bottom-left-radius: 0;
+}
+.MuiDataGrid-footerContainer {
+  background-color: #fff;
+  border: 1px solid #e7ebf1;
+  border-top: none;
+  // border-bottom-left-radius: 5px;
+  // border-bottom-right-radius: 5px;
 }

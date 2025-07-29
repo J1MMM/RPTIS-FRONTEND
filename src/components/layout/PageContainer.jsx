@@ -8,7 +8,7 @@ export const PageContainer = ({
   children,
 }) => {
   return (
-    <Box sx={{ p: 2, boxSizing: "border-box" }}>
+    <Box sx={{ p: 2, boxSizing: "border-box", bgcolor: "#f8fafd" }}>
       <Box height={`calc(100vh - ${160}px)`} width="100%">
         {children}
       </Box>

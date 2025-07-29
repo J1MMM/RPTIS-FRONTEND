@@ -54,8 +54,8 @@ function App() {
             <Route path="" element={<CashPendingList />} />
             <Route path="paidlist" element={<CashPaidList />} />
           </Route>
+          {/* </Route> */}
         </Route>
-        {/* </Route> */}
         {/* </Route> */}
         <Route path="*" element={<Missing />} />
       </Routes>
