@@ -18,11 +18,29 @@ export const ALERT_SEV = {
 
 export const ASSESSMENT_ROLL_COLUMN = [
   {
+    field: "ArpNo",
+    headerName: "ARP NO.",
+    // width: 200,
+    flex: 1,
+    editable: false,
+    headerClassName: "data-grid-header",
+  },
+  {
+    field: "PID",
+    headerName: "PROPERTY INDEX NO.",
+    // width: 200,
+    flex: 1,
+    editable: false,
+    headerClassName: "data-grid-header",
+  },
+
+  {
     field: "fname",
     headerName: "PROPERTY OWNER",
     editable: false,
     headerClassName: "data-grid-header",
-    width: 200,
+    // width: 200,
+    flex: 1,
     renderCell: (params, i) => {
       const fname = params.row?.fname;
       const mname = params.row?.mname;
@@ -34,31 +52,19 @@ export const ASSESSMENT_ROLL_COLUMN = [
       );
     },
   },
-  {
-    field: "PID",
-    headerName: "PROPERTY INDEX NO.",
-    width: 200,
-    editable: false,
-    headerClassName: "data-grid-header",
-  },
-  {
-    field: "ArpNo",
-    headerName: "ARP NO.",
-    width: 200,
-    editable: false,
-    headerClassName: "data-grid-header",
-  },
-  {
-    field: "oldArp",
-    headerName: "OLD ARP",
-    width: 200,
-    editable: false,
-    headerClassName: "data-grid-header",
-  },
+  // {
+  //   field: "oldArp",
+  //   headerName: "OLD ARP",
+  //   // width: 200,
+  //   flex: 1,
+  //   editable: false,
+  //   headerClassName: "data-grid-header",
+  // },
   {
     field: "Address",
-    headerName: "OWNED ADDRESS",
-    width: 200,
+    headerName: "ADDRESS",
+    // width: 200,
+    flex: 1,
     editable: false,
     headerClassName: "data-grid-header",
   },
@@ -98,32 +104,34 @@ export const ASSESSMENT_ROLL_COLUMN = [
       );
     },
   },
-  {
-    field: "classification",
-    headerName: "CLASS",
-    width: 200,
-    editable: false,
-    align: "center",
-    headerAlign: "center",
-    headerClassName: "data-grid-header",
-    renderCell: (params, i) => {
-      const classification = Array.isArray(params.row?.classification)
-        ? params.row?.classification
-        : [];
+  // {
+  //   field: "classification",
+  //   headerName: "CLASS",
+  //   // width: 200,
+  //   flex: 1,
+  //   editable: false,
+  //   align: "center",
+  //   headerAlign: "center",
+  //   headerClassName: "data-grid-header",
+  //   renderCell: (params, i) => {
+  //     const classification = Array.isArray(params.row?.classification)
+  //       ? params.row?.classification
+  //       : [];
 
-      return (
-        <Stack flexDirection="row" gap={1} alignItems="center" height="100%">
-          {classification?.map((obj, i) => (
-            <Chip key={i} label={obj?.classification} size="small" />
-          ))}
-        </Stack>
-      );
-    },
-  },
+  //     return (
+  //       <Stack flexDirection="row" gap={1} alignItems="center" height="100%">
+  //         {classification?.map((obj, i) => (
+  //           <Chip key={i} label={obj?.classification} size="small" />
+  //         ))}
+  //       </Stack>
+  //     );
+  //   },
+  // },
   {
     field: "LocationOfProperty",
     headerName: "LOCATION OF PROPERTY",
-    width: 200,
+    // width: 200,
+    flex: 1,
     editable: false,
     headerClassName: "data-grid-header",
 
@@ -140,7 +148,8 @@ export const ASSESSMENT_ROLL_COLUMN = [
   {
     field: "AssessedValue",
     headerName: "ASSESSED VALUE",
-    width: 200,
+    // width: 200,
+    flex: 1,
     editable: false,
     headerClassName: "data-grid-header",
     renderCell: (params, i) => {
@@ -151,7 +160,8 @@ export const ASSESSMENT_ROLL_COLUMN = [
   {
     field: "TAXABILITY",
     headerName: "TAXABILITY",
-    width: 200,
+    // width: 200,
+    flex: 1,
     editable: false,
     align: "center",
     headerAlign: "center",
@@ -162,19 +172,20 @@ export const ASSESSMENT_ROLL_COLUMN = [
       return <span>{TAXABILITY?.toUpperCase()}</span>;
     },
   },
-  {
-    field: "dateOfEffectivity",
-    headerName: "EFFECTIVITY",
-    width: 200,
-    editable: false,
-    align: "center",
-    headerAlign: "center",
-    headerClassName: "data-grid-header",
-    renderCell: (params, i) => {
-      const dateOfEffectivity = dayjs(params.row?.dateOfEffectivity);
-      return <span>{dateOfEffectivity.format("MM/DD/YYYY")}</span>;
-    },
-  },
+  // {
+  //   field: "dateOfEffectivity",
+  //   headerName: "EFFECTIVITY",
+  //   // width: 200,
+  //   flex: 1,
+  //   editable: false,
+  //   align: "center",
+  //   headerAlign: "center",
+  //   headerClassName: "data-grid-header",
+  //   renderCell: (params, i) => {
+  //     const dateOfEffectivity = dayjs(params.row?.dateOfEffectivity);
+  //     return <span>{dateOfEffectivity.format("MM/DD/YYYY")}</span>;
+  //   },
+  // },
 ];
 
 export const CENCELS_TABLE_COLUMN = [

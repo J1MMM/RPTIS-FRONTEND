@@ -479,19 +479,66 @@ function AssessmentRoll() {
   return (
     <>
       <PageContainer>
+        {/* <DataGrid
+            checkboxSelection
+            // loading={isAssessorLoading}
+            rows={rows}
+            columns={ASSESSMENT_ROLL_COLUMN}
+            initialState={DATA_GRID_INITIAL_STATE}
+            pageSizeOptions={PAGE_SIZE_OPTION}
+            disableRowSelectionOnClick
+            disableColumnResize
+            onCellDoubleClick={handleCellDoubleClick}
+            onRowSelectionModelChange={handleSelectionChange}
+            sx={DATA_GRID_STYLE}
+            slots={{
+              toolbar: () => (
+                <TableToolbar
+                  titleText="ASSESSOR OFFICE"
+                  subText="Office of the Property Appraiser"
+                  actionBtn={<PageButton />}
+                />
+              ),
+            }}
+            slotProps={{
+              panel: {
+                placement: "bottom-end",
+              },
+            }}
+          /> */}
+
         <DataGrid
-          checkboxSelection
-          // loading={isAssessorLoading}
-          rows={rows}
           columns={ASSESSMENT_ROLL_COLUMN}
-          initialState={DATA_GRID_INITIAL_STATE}
-          pageSizeOptions={PAGE_SIZE_OPTION}
-          disableRowSelectionOnClick
-          disableColumnResize
+          rows={rows}
           onCellDoubleClick={handleCellDoubleClick}
-          onRowSelectionModelChange={handleSelectionChange}
+          // rowCount={rowCount}
+          initialState={{
+            pagination: {
+              paginationModel: {
+                page: 0,
+                pageSize: 50,
+              },
+            },
+          }}
+          pageSizeOptions={[10, 50, 100]}
+          // onCellDoubleClick={onCellDoubleClick}
+          // paginationModel={{ page: page, pageSize: pageSize }}
+          // onFilterModelChange={onFilterModelChange}
+          // onPaginationModelChange={onPaginationModelChange}
+          // onStateChange={onStateChange}
+          // loading={loading}
+          disableRowSelectionOnClick
+          checkboxSelection
+          showCellVerticalBorder
+          // getRowClassName={getRowClassName}
+          // paginationMode={paginationMode || "client"}
+          // sortingMode={sortingMode || "client"}
+          // filterMode={filterMode || "client"}
+          // onSortModelChange={onSortModelChange}
           sx={DATA_GRID_STYLE}
           slots={{
+            // noRowsOverlay: EmptyRowsOverlay,
+            // loadingOverlay: LoadingComp,
             toolbar: () => (
               <TableToolbar
                 titleText="ASSESSOR OFFICE"
@@ -501,9 +548,7 @@ function AssessmentRoll() {
             ),
           }}
           slotProps={{
-            panel: {
-              placement: "bottom-end",
-            },
+            panel: { placement: "bottom-end" },
           }}
         />
       </PageContainer>
