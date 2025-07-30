@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
+  Typography,
 } from "@mui/material";
 import React from "react";
 
@@ -29,13 +30,13 @@ export const ContainerModal = ({
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          backgroundColor: "primary.main",
-          color: "#ffffff",
           fontWeight: 600, // Correct weight for semi-bold
+          padding: 1,
+          paddingX: 2,
         }}
       >
-        {title}
-        <IconButton sx={{ color: "#FFF" }} onClick={onClose}>
+        <Typography> {title}</Typography>
+        <IconButton onClick={onClose}>
           <CloseRounded />
         </IconButton>
       </DialogTitle>

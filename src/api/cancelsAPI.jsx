@@ -1,5 +1,5 @@
+import axios from "../services/axios";
 import { BASE_URL } from "../utils/constant";
-import axios from "./axios";
 
 // Fetch function using REST API
 export const fetchCancelsData = async () => {

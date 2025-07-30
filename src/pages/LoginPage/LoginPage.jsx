@@ -3,9 +3,9 @@ import { Navigate, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/favicon.svg";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import "./index.scss";
-import axios from "../../api/axios";
 import useAuth from "../../hooks/useAuth";
 import Cookies from "js-cookie";
+import axios from "../../services/axios";
 
 const LoginPage = () => {
   const { auth, setAuth } = useAuth();

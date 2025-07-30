@@ -1,8 +1,10 @@
 import React, { createContext } from "react";
-import { fetchInitialData, fetchPendingData } from "../api/assessorAPI";
 import { useQuery } from "react-query";
 import { fetchCancelsData } from "../api/cancelsAPI";
-
+import {
+  fetchInitialData,
+  fetchPendingData,
+} from "../features/Assessor/services/AssessorService";
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {

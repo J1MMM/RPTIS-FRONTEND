@@ -1,0 +1,22 @@
+input {
+  all: unset;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-row-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.td-wrapper label {
+  font-weight: 500;
+}
+
+.grid-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid;
+}

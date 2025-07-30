@@ -1,5 +1,4 @@
-import { BASE_URL } from "../utils/constant";
-import axios from "./axios";
+import axios from "../../../services/axios";
 
 // Fetch function using REST API
 export const fetchInitialData = async () => {
