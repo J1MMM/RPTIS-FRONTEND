@@ -1,0 +1,52 @@
+input {
+  all: unset;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.labeled-input {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 3px;
+  border-left: 1px solid;
+  border-top: 1px solid;
+  &:last-child {
+    border-right: 1px solid;
+  }
+  & .label {
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 3px;
+}
+.b-none {
+  border: none;
+}
+.bt-0 {
+  border-top: none;
+}
+.bb-0 {
+  border-bottom: none;
+}
+.bl-0 {
+  border-left: none;
+}
+.br-0 {
+  border-right: none !important;
+}
+
+@for $i from 1 through 12 {
+  .grid-#{$i} {
+    display: grid;
+    grid-template-columns: repeat(#{$i}, 1fr);
+  }
+}

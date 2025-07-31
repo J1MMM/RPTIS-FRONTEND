@@ -89,7 +89,11 @@ function LandActiveTable() {
         }}
       />
 
-      <LandFaasForm open={formActive} onClose={() => setFormActive(false)} />
+      <LandFaasForm
+        title="REAL PROPERTY FIELD APPRAISAL & ASSESSMENT SHEET - LAND"
+        open={formActive}
+        onClose={() => setFormActive(false)}
+      />
     </>
   );
 }

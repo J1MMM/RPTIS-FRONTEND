@@ -30,12 +30,14 @@ export const ContainerModal = ({
         sx={{
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "center",
           fontWeight: 600, // Correct weight for semi-bold
-          padding: 1,
-          paddingX: 2,
+          fontFamily: "Poppins",
+          bgcolor: "primary.main",
+          color: "#FFF",
         }}
       >
-        <Typography> {title}</Typography>
+        <Typography variant="h6">{title}</Typography>
         <IconButton onClick={onClose}>
           <CloseRounded />
         </IconButton>

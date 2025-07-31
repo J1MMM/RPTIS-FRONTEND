@@ -20,6 +20,7 @@ function AppRoutes() {
           <Route path="assessor" element={<AssessorLayout />}>
             <Route index element={<ActiveFaasPage />} />
             <Route path="cancels" element={<ActiveFaasPage />} />
+            <Route path="pending" element={<ActiveFaasPage />} />
           </Route>
         </Route>
         {/* </Route> */}

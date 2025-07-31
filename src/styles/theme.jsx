@@ -16,8 +16,9 @@ const theme = createTheme({
   components: {
     MuiTextField: {
       defaultProps: {
-        margin: "dense", // Apply this to all variants if needed
         fullWidth: true, // Apply this to all variants if needed
+        margin: "dense",
+        variant: "outlined",
       },
     },
     MuiButton: {
